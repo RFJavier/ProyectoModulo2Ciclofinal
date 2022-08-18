@@ -108,7 +108,15 @@ public class RegistroPacienteDAL {
         pIndex++;
         pregistro.setIdpaciente(pResultSet.getInt(pIndex)); 
         pIndex++;
-        pregistro.setNombre(pResultSet.getString(pIndex)); 
+        pregistro.setNombre(pResultSet.getString(pIndex));
+        pIndex++;
+        pregistro.setApellido(pResultSet.getString(pIndex));
+        pIndex++;
+        pregistro.setTelefono(pResultSet.getString(pIndex));
+        pIndex++;
+        pregistro.setDireccion(pResultSet.getString(pIndex));
+        pIndex++;
+        pregistro.setD(pResultSet.getString(pIndex));
         return pIndex;
     }
      
@@ -127,7 +135,7 @@ public class RegistroPacienteDAL {
      
      public static RegistroPaciente obtenerPorId(RegistroPaciente pregistro) throws Exception {
         RegistroPaciente control = new RegistroPaciente();
-        ArrayList<RegistroPaciente> Horarios = new ArrayList();
+        ArrayList<RegistroPaciente> pacientes = new ArrayList();
         try (Connection conn = ComunDB.obtenerConexion();) { 
             String sql = obtenerSelect(pregistro); 
             sql += " WHERE r.idpaciente,r.Nombre,r.apellido,r.telefono,r.direccion,r.dui"; 
@@ -147,8 +155,8 @@ public class RegistroPacienteDAL {
         catch (SQLException ex) {
             throw ex; 
         }
-        if (Horarios.size() > 0) { 
-            control = Horarios.get(0); 
+        if (pacientes.size() > 0) { 
+            control = pacientes.get(0); 
         }
         return control; 
     }
@@ -185,10 +193,41 @@ public class RegistroPacienteDAL {
         }
         
         if (pregistro.getNombre() != null && pregistro.getNombre().trim().isEmpty() == false) {
-            pUtilQuery.AgregarWhereAnd(" r.nombre, r.apellido, r.telefono, r.direccion, r.dui LIKE ?,?,?,?,? "); 
+            pUtilQuery.AgregarWhereAnd(" r.nombre LIKE ? "); 
             if (statement != null) {
                 
                 statement.setString(pUtilQuery.getNumWhere(), "%" + pregistro.getNombre() + "%"); 
+            }
+        }
+        
+       if (pregistro.getApellido() != null && pregistro.getApellido().trim().isEmpty() == false) {
+            pUtilQuery.AgregarWhereAnd(" r.apellido LIKE ? "); 
+            if (statement != null) {
+                
+                statement.setString(pUtilQuery.getNumWhere(), "%" + pregistro.getApellido() + "%"); 
+            }
+        } 
+       if (pregistro.getTelefono() != null && pregistro.getTelefono().trim().isEmpty() == false) {
+            pUtilQuery.AgregarWhereAnd(" r.telefono LIKE ? "); 
+            if (statement != null) {
+                
+                statement.setString(pUtilQuery.getNumWhere(), "%" + pregistro.getTelefono() + "%"); 
+            }
+        }
+       
+       if (pregistro.getDireccion() != null && pregistro.getDireccion().trim().isEmpty() == false) {
+            pUtilQuery.AgregarWhereAnd(" r.direccion LIKE ? "); 
+            if (statement != null) {
+                
+                statement.setString(pUtilQuery.getNumWhere(), "%" + pregistro.getDireccion() + "%"); 
+            }
+        }
+       
+       if (pregistro.getDui() != null && pregistro.getDui().trim().isEmpty() == false) {
+            pUtilQuery.AgregarWhereAnd(" r.dui LIKE ? "); 
+            if (statement != null) {
+                
+                statement.setString(pUtilQuery.getNumWhere(), "%" + pregistro.getDui() + "%"); 
             }
         }
     }

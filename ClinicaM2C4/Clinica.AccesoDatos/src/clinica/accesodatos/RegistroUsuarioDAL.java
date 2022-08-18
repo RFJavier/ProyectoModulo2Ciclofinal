@@ -7,6 +7,7 @@ package clinica.accesodatos;
 import java.util.*;
 import java.sql.*;
 import clinica.entidadesdenegocio.Usuario;
+import clinica.entidadesdenegocio.Rol;
 import java.time.LocalDate;
 /**
  *
@@ -463,6 +464,6 @@ public class RegistroUsuarioDAL {
         }
         return usuarios; // Devolver el ArrayList de Usuario
     }
-            }
-    
 }
+    
+

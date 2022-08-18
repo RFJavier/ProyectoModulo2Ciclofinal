@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package clinica.entidadesdenegocio;
-
+import java.util.ArrayList;
 /**
  *
  * @author Javier Rivera
@@ -17,6 +17,9 @@ public class RegistroPaciente {
     private String direccion;
     private String dui;
     private int Top_Aux;
+    private ArrayList<RegistroExamen> registroexamen;
+
+    
 
     public RegistroPaciente() {
     }
@@ -86,6 +89,12 @@ public class RegistroPaciente {
         this.Top_Aux = Top_Aux;
     }
     
-    
+   public ArrayList<RegistroExamen> getRegistroexamen() {
+        return registroexamen;
+    }
+
+    public void setRegistroexamen(ArrayList<RegistroExamen> registroexamen) {
+        this.registroexamen = registroexamen;
+    } 
     
 }
