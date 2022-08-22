@@ -116,7 +116,7 @@ public class RegistroPacienteDAL {
         pIndex++;
         pregistro.setDireccion(pResultSet.getString(pIndex));
         pIndex++;
-        pregistro.setD(pResultSet.getString(pIndex));
+        pregistro.setDui(pResultSet.getString(pIndex));
         return pIndex;
     }
      
@@ -141,12 +141,7 @@ public class RegistroPacienteDAL {
             sql += " WHERE r.idpaciente,r.Nombre,r.apellido,r.telefono,r.direccion,r.dui"; 
             try (PreparedStatement ps = ComunDB.createPreparedStatement(conn, sql);) { 
                 ps.setInt(1, pregistro.getIdpaciente()); 
-               ps.setString(2, pregistro.getNombre()); 
-                ps.setString(3, pregistro.getApellido());
-                ps.setString(4, pregistro.getTelefono());
-                ps.setString(5, pregistro.getDireccion());
-                ps.setString(6, pregistro.getDui());
-                ps.close(); 
+                obtenerDatos(ps, pacientes);
             } catch (SQLException ex) {
                 throw ex;  
             }

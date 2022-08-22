@@ -2,13 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group name="ClinicaM2C4">
-            <file>file:/C:/Users/Javier%20Rivera/OneDrive/Desktop/ProyectoModulo2Cilcofinal/ClinicaM2C4/Clinica.AccesoDatos/src/clinica/accesodatos/ComunDB.java</file>
-            <file>file:/C:/Users/Javier%20Rivera/OneDrive/Desktop/ProyectoModulo2Cilcofinal/ClinicaM2C4/Clinica.AccesoDatos/src/clinica/accesodatos/RegistroExamenDAL.java</file>
-            <file>file:/C:/Users/Javier%20Rivera/OneDrive/Desktop/ProyectoModulo2Cilcofinal/ClinicaM2C4/Clinica.AccesoDatos/src/clinica/accesodatos/RolDAL.java</file>
-            <file>file:/C:/Users/Javier%20Rivera/OneDrive/Desktop/ProyectoModulo2Cilcofinal/ClinicaM2C4/Clinica.AccesoDatos/src/clinica/accesodatos/ControlHorarioDAL.java</file>
-            <file>file:/C:/Users/Javier%20Rivera/OneDrive/Desktop/ProyectoModulo2Cilcofinal/ClinicaM2C4/Clinica.AccesoDatos/src/clinica/accesodatos/RegistroPacienteDAL.java</file>
-            <file>file:/C:/Users/Javier%20Rivera/OneDrive/Desktop/ProyectoModulo2Cilcofinal/ClinicaM2C4/Clinica.AccesoDatos/src/clinica/accesodatos/RegistroUsuarioDAL.java</file>
-        </group>
+        <group name="ClinicaM2C4"/>
     </open-files>
 </project-private>

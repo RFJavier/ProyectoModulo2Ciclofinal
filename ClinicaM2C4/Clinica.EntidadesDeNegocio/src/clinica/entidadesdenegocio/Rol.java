@@ -9,7 +9,7 @@ public class Rol {
     private int id;
     private String nombre;
     private int top_aux;
-    private ArrayList<RegistroPaciente> Paciente;
+    private ArrayList<Usuario> Usuario;
 
     public Rol() {
     }
@@ -43,12 +43,12 @@ public class Rol {
         this.top_aux = top_aux;
     }
 
-    public ArrayList<RegistroPaciente> getPaciente() {
-        return Paciente;
+     public ArrayList<Usuario> getUsuario() {
+        return Usuario;
     }
 
-    public void setPaciente(ArrayList<RegistroPaciente> Paciente) {
-        this.Paciente = Paciente;
+    public void setUsuario(ArrayList<Usuario> Usuario) {
+        this.Usuario = Usuario;
     }
     
 }

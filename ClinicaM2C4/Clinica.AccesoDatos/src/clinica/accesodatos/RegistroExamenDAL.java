@@ -137,16 +137,14 @@ public class RegistroExamenDAL {
      
     
    public static RegistroExamen obtenerPorId(RegistroExamen pregistro) throws Exception {
-        RegistroExamen examen = new RegistroExamen();
-        ArrayList<RegistroExamen > examenes = new ArrayList();
+        RegistroExamen registroexamen = new RegistroExamen();
+        ArrayList<RegistroExamen> examenes = new ArrayList();
         try (Connection conn = ComunDB.obtenerConexion();) { 
             String sql = obtenerSelect(pregistro); 
             sql += " WHERE r.idexamen,r.idpaciente_fore,r.examen,r.observacion"; 
             try (PreparedStatement ps = ComunDB.createPreparedStatement(conn, sql);) { 
                 ps.setInt(1, pregistro.getIdexamen()); 
-               ps.setInt(2, pregistro.getIdpaciente_fore()); 
-                ps.setString(3, pregistro.getExamen());
-                ps.setString(4, pregistro.getObservacion());
+                obtenerDatos(ps, examenes);
                 ps.close(); 
             } catch (SQLException ex) {
                 throw ex;  
@@ -157,9 +155,9 @@ public class RegistroExamenDAL {
             throw ex; 
         }
         if (examenes.size() > 0) { 
-            examen = examenes.get(0); 
+            registroexamen = examenes.get(0); 
         }
-        return examen; 
+        return registroexamen; 
     }
   
  public static ArrayList<RegistroExamen> obtenerTodos() throws Exception {
@@ -192,11 +190,11 @@ public class RegistroExamenDAL {
             }
         }
         
-        if (pregistro.getIdRol() > 0) {
-            pUtilQuery.AgregarWhereAnd(" u.IdRol=? "); // agregar el campo IdRol al filtro de la consulta SELECT y agregar en el WHERE o AND
+        if (pregistro.getIdpaciente_fore() > 0) {
+            pUtilQuery.AgregarWhereAnd(" r.idpacinte_fore=? "); // agregar el campo IdRol al filtro de la consulta SELECT y agregar en el WHERE o AND
             if (statement != null) {
                  // agregar el parametro del campo IdRol a la consulta SELECT de la tabla de Usuario
-                statement.setInt(pUtilQuery.getNumWhere(), pregistro.getIdRol());
+                statement.setInt(pUtilQuery.getNumWhere(), pregistro.getIdpaciente_fore());
             }
         }
         
@@ -246,5 +244,5 @@ public class RegistroExamenDAL {
     
 }
     
-}
+
 
