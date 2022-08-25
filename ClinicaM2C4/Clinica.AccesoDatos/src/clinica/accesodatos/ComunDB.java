@@ -73,55 +73,59 @@ public class ComunDB {
     }
     
     
-class utilQuery{
-    private String SQL;
-    private PreparedStatement statement;
-    private int numWhere;
+class UtilQuery {
 
-    public utilQuery() {
-    }
+        private String SQL; 
+        private PreparedStatement statement; 
+        private int numWhere; 
 
-    public utilQuery(String SQL, PreparedStatement statement, int numWhere) {
-        this.SQL = SQL;
-        this.statement = statement;
-        this.numWhere = numWhere;
-    }
-
-    public String getSQL() {
-        return SQL;
-    }
-
-    public void setSQL(String SQL) {
-        this.SQL = SQL;
-    }
-
-    public PreparedStatement getStatement() {
-        return statement;
-    }
-
-    public void setStatement(PreparedStatement statement) {
-        this.statement = statement;
-    }
-
-    public int getNumWhere() {
-        return numWhere;
-    }
-
-    public void setNumWhere(int numWhere) {
-        this.numWhere = numWhere;
-    }
-    
-    public void AgregarNumWhere(String pSql){
-        if(this.SQL != null){
-            if(this.numWhere == 0)
-                this.SQL += " WHERE ";
-            else
-                this.SQL += " AND ";
-            
-            this.SQL += pSql;
+        public UtilQuery() { 
         }
-        this.numWhere++;
+
+        public UtilQuery(String SQL, PreparedStatement statement, int numWhere) { 
+            this.SQL = SQL;
+            this.statement = statement;
+            this.numWhere = numWhere;
+        }
+
+        
+        public String getSQL() {
+            return SQL;
+        }
+
+        public void setSQL(String SQL) {
+            this.SQL = SQL;
+        }
+
+        public PreparedStatement getStatement() {
+            return statement;
+        }
+
+        public void setStatement(PreparedStatement statement) {
+            this.statement = statement;
+        }
+
+        public int getNumWhere() {
+            return numWhere;
+        }
+
+        public void setNumWhere(int numWhere) {
+            this.numWhere = numWhere;
+        }
+       
+        public void AgregarWhereAnd(String pSql) {
+            if (this.SQL != null) {
+                if (this.numWhere == 0) { 
+                    
+                    this.SQL += " WHERE ";
+                } else {
+                    
+                    this.SQL += " AND ";
+                }
+                this.SQL += pSql; 
+            }
+            this.numWhere++; 
+        }
     }
-}
     
 }

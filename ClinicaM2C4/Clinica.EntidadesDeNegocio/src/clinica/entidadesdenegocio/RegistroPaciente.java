@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package clinica.entidadesdenegocio;
-
+import java.util.ArrayList;
 /**
  *
  * @author Javier Rivera
@@ -17,8 +17,8 @@ public class RegistroPaciente {
     private String direccion;
     private String dui;
     private int Top_Aux;
-    private RegistroExamen examen;
-    private ControlHorario horario;
+    private ArrayList<ControlHorario> controlhorario;
+    private ArrayList<RegistroExamen> registroexamen;
 
     public RegistroPaciente() {
     }
@@ -87,21 +87,23 @@ public class RegistroPaciente {
     public void setTop_Aux(int Top_Aux) {
         this.Top_Aux = Top_Aux;
     }
+
+    public ArrayList<ControlHorario> getControlhorario() {
+        return controlhorario;
+    }
+
+    public void setControlhorario(ArrayList<ControlHorario> controlhorario) {
+        this.controlhorario = controlhorario;
+    }
+
+    public ArrayList<RegistroExamen> getRegistroexamen() {
+        return registroexamen;
+    }
+
+    public void setRegistroexamen(ArrayList<RegistroExamen> registroexamen) {
+        this.registroexamen = registroexamen;
+    }
+
     
-     public RegistroExamen getExamen() {
-        return examen;
-    }
-
-    public void setExamen(RegistroExamen examen) {
-        this.examen = examen;
-    }
-
-    public ControlHorario getHorario() {
-        return horario;
-    }
-
-    public void setHorario(ControlHorario horario) {
-        this.horario = horario;
-    }
     
 }
