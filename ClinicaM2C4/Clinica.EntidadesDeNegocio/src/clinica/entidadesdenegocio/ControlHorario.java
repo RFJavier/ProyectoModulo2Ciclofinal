@@ -12,7 +12,7 @@ public class ControlHorario {
     
     private int idhorario;
     
-    private int idexamen_fore;
+    private int idpaciente_fore;
     private String Nombre;
     private String Horacita;
     private String Nuevacita;
@@ -23,9 +23,9 @@ public class ControlHorario {
     public ControlHorario() {
     }
 
-    public ControlHorario(int idhorario, int idexamen_fore, String Nombre, String Horacita, String Nuevacita) {
+    public ControlHorario(int idhorario, int idpaciente_fore, String Nombre, String Horacita, String Nuevacita) {
         this.idhorario = idhorario;
-        this.idexamen_fore = idexamen_fore;
+        this.idpaciente_fore = idpaciente_fore;
         this.Nombre = Nombre;
         this.Horacita = Horacita;
         this.Nuevacita = Nuevacita;
@@ -40,11 +40,11 @@ public class ControlHorario {
     }
 
     public int getIdexamen_fore() {
-        return idexamen_fore;
+        return idpaciente_fore;
     }
 
     public void setIdexamen_fore(int idexamen_fore) {
-        this.idexamen_fore = idexamen_fore;
+        this.idpaciente_fore = idexamen_fore;
     }
 
     public String getNombre() {
